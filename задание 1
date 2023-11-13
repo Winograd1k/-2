@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(0, "");
+
+	int size = 1;
+	int minNum = 0;
+	int count = 0;
+
+	cout << "Напишите количество попыток: ";
+	cin >> size;
+
+	int num = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << "Введите число: ";
+		cin >> num;
+		if (minNum == num)
+		{
+			count++;
+		}
+		if (num < minNum || i == 0)
+		{
+			minNum = num;
+			count = 0;
+		}
+	}
+
+	cout << "Минимальное число: " << minNum << endl;
+	cout << "Количество повторений минимального числа: " << count << endl;
+
+}
